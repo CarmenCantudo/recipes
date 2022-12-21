@@ -1,3 +1,10 @@
 from django.contrib import admin
+from .models import Recipe
+from django_summernote.admin import SummernoteModelAdmin
 
-# Register your models here.
+
+@admin.register(Post)
+class RecipeAdmin(SummernoteModelAdmin):
+
+    summernote_fields = ('description', 'prep_time', 'cooking_time', 'serves',
+                         'ingredients', 'method')
