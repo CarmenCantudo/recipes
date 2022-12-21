@@ -47,3 +47,26 @@ class Recipe(models.Model):
         Returns the number of likes on a recipe
         """
         return self.likes.count()
+
+
+class Comment(models.Model):
+    """
+    Comments Model
+    Modified from I think therefore I blog, Code Institute
+    """
+    recipe = models.ForeignKey(
+        Recipe, on_delete=models.CASCADE, related_name="comments")
+    name = models.CharField(max_length=80, unique=True)
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        """
+        Order the comments in ascending order (oldest first)
+        """
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.name}"
