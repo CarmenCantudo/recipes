@@ -23,6 +23,7 @@ class Recipe(models.Model):
     difficulty = models.IntegerField(choices=LEVEL, default=1)
     prep_time = models.CharField(blank=True, max_length=20)
     cooking_time = models.CharField(blank=True, max_length=20)
+    serves = models.CharField(blank=True, max_length=20)
     ingredients = models.TextField()
     method = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
