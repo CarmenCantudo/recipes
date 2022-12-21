@@ -18,8 +18,8 @@ class Recipe(models.Model):
         User, on_delete=models.CASCADE, related_name="recipe_posts")
     created_on = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated_on = models.DateTimeField(auto_now=True)
-    excerpt = models.TextField(blank=True,
-                               help_text="Describe the recipe")
+    description = models.TextField(blank=True,
+                                   help_text="Describe the recipe")
     difficulty = models.IntegerField(choices=LEVEL, default=1)
     prep_time = models.CharField(blank=True, max_length=20)
     cooking_time = models.CharField(blank=True, max_length=20)
