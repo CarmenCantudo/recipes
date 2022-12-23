@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Life+Savers&display=swap');
+
+body {
+    background-color: #F9FAFC;
+}
+
+.navbar-brand {
+    font-family: 'Life Savers', cursive;
+    font-size: 28px;
+}
+
+.card {
+    border: none;
+    background-color: transparent;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-flash {
+    position: absolute;
+    bottom: 5%;
+    min-width: 30%;
+    left: -2px;
+    background-color: #23BBBB;
+}
+
+.author, .created-like {
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.recipe-link {
+    text-decoration: none;
+    color: #445261;
+}
