@@ -44,11 +44,11 @@
             <!-- Navbar links for authenticated users -->
             {% if user.is_authenticated %}
             <a class="nav-link" href="#">Add Recipe</a>
-            <a class="nav-link" href="#">Sign Out</a>
+            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
             {% else %}
             <!-- Navbar links for all users -->
-            <a class="nav-link" href="#">Sign Up</a>
-            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
+            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
             <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
             {% endif %}
           </div>
