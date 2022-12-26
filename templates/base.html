@@ -40,7 +40,7 @@
           <div class="navbar-nav">
             <!-- Navbar links for all users -->
             <a class="nav-link" href="{% url 'home' %}">Home</a>
-            <a class="nav-link" href="#">Recipes</i></a>
+            <a class="nav-link" href="{% url 'recipes' %}">Recipes</i></a>
             <!-- Navbar links for authenticated users -->
             {% if user.is_authenticated %}
             <a class="nav-link" href="#">Add Recipe</a>
