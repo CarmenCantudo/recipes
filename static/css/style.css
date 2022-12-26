@@ -9,6 +9,7 @@ body {
     font-size: 28px;
 }
 
+/* Recipe list */
 .card {
     border: none;
     background-color: transparent;
@@ -34,4 +35,69 @@ body {
 .recipe-link {
     text-decoration: none;
     color: #445261;
+}
+
+/* Recipe details */
+#hero-outer {
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+
+    /* Change position to relative and cover-text to absolute to get it fixed in the section. */
+    position: relative;
+}
+
+#hero-image {
+    height: 100%;
+    width: 100%;
+    background-color: #FEEEDF;
+    
+    /* Animates zoom effect on loading page */
+    animation-name: hero-zoom;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+/* Creates the level of zoom for hero image */
+
+@keyframes hero-zoom {
+    from {
+        transform: scale(1.1);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+#hero-image {
+    background: no-repeat center center;
+    background-size: cover;
+}
+
+/* Text over hero image */
+
+#cover-text, #cover-text h2 {
+    color: #000000;
+}
+
+#cover-text {
+    font-size: 130%;
+    font-family: Playfair Display, sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+
+    width: 100%;
+    height: 120px;
+
+    background-color: rgba(255, 80, 80, 0.7);
+    bottom: 0px;
+
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+#cover-text h2 {
+    margin: 20px;
+    align-self: center;
 }
