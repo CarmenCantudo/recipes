@@ -101,3 +101,26 @@ body {
     margin: 20px;
     align-self: center;
 }
+
+
+/* Account pages */
+
+.background {
+    background: url(https://img.freepik.com/free-photo/colorful-veggies-frame-with-copy-space_23-2148290738.jpg?w=996&t=st=1672081483~exp=1672082083~hmac=aa8d326…) no-repeat center center;
+    height: 100vh;
+    /* height: 100%; */
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-size: cover;
+}
+
+.loginout-form {
+    margin: 0;
+
+}
+
+.form-background {
+    background-color: rgb(246 245 245 / 50%);
+    padding: 15px 25px;
+}
