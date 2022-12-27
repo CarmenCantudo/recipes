@@ -7,6 +7,16 @@ body {
 .navbar-brand {
     font-family: 'Life Savers', cursive;
     font-size: 28px;
+    font-weight: 600;
+    color: #B0081B;
+}
+
+.nav-link {
+    color: #B0081B;
+}
+
+footer {
+    color: #B0081B;
 }
 
 /* Recipe list */
