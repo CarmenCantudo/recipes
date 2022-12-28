@@ -23,9 +23,9 @@
         <div class="row py-5">
             <div class="col-8">{{ recipe.description | safe }}</div>
             <div class="col-4">
-                <p><i class="fa-solid fa-utensils text-primary"></i> Serves: {{ recipe.serves }}</p>
-                <p><i class="fa-solid fa-kitchen-set text-primary"></i> Prep Time: {{ recipe.prep_time }}</p>
-                <p><i class="fa-solid fa-fire-burner text-primary"></i> Cooking Time: {{ recipe.cooking_time }}</p>  
+                <p><i class="fa-solid fa-utensils icons"></i> Serves: {{ recipe.serves }}</p>
+                <p><i class="fa-solid fa-kitchen-set icons"></i> Prep Time: {{ recipe.prep_time }}</p>
+                <p><i class="fa-solid fa-fire-burner icons"></i> Cooking Time: {{ recipe.cooking_time }}</p>  
             </div>
         </div>
         <!-- Recipe ingredients and method -->
@@ -93,7 +93,7 @@
             <div class="card-body">
                 <!-- Leave a comment if user authenticated and show message if commented -->
                 {% if commented %}
-                <div class="alert alert-success" role="alert">
+                <div class="alert comment-alert" role="alert">
                     Your comment is awaiting approval
                 </div>
                 {% else %}

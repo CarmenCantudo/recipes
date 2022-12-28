@@ -19,7 +19,10 @@ footer {
     color: #B0081B;
 }
 
-/* Recipe list */
+/***************************/
+/******* Recipe list *******/
+/***************************/
+
 .card {
     border: none;
     background-color: transparent;
@@ -47,7 +50,14 @@ footer {
     color: #445261;
 }
 
-/* Recipe details */
+.icons {
+    color: #B0081B;
+}
+
+/***************************/
+/****** Recipe details *****/
+/***************************/
+
 #hero-outer {
     height: 400px;
     width: 100%;
@@ -68,7 +78,7 @@ footer {
     animation-fill-mode: forwards;
 }
 
-/* Creates the level of zoom for hero image */
+    /* Creates the level of zoom for hero image */
 
 @keyframes hero-zoom {
     from {
@@ -99,8 +109,10 @@ footer {
     width: 100%;
     height: 120px;
 
-    background-color: rgba(255, 80, 80, 0.7);
+    background-color: #B0091A;
     bottom: 0px;
+    color: white;
+    padding: 10px;
 
     position: absolute;
     display: flex;
@@ -112,8 +124,18 @@ footer {
     align-self: center;
 }
 
+.comment-alert{
+    border: 2px solid #b0091a2e;
+    border-radius: 8px;
+    padding: 5px;
+    color: #B0091A;
+    background-color: rgb(176 9 26 / 9%);
+    padding: 15px;
+}
 
-/* Account pages */
+/***************************/
+/****** Account pages ******/
+/***************************/
 
 .background {
     background: url(https://img.freepik.com/free-photo/colorful-veggies-frame-with-copy-space_23-2148290738.jpg?w=996&t=st=1672081483~exp=1672082083~hmac=aa8d326…) no-repeat center center;
