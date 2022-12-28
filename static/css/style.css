@@ -78,7 +78,7 @@ footer {
     animation-fill-mode: forwards;
 }
 
-    /* Creates the level of zoom for hero image */
+/* Creates the level of zoom for hero image */
 
 @keyframes hero-zoom {
     from {
@@ -131,6 +131,12 @@ footer {
     color: #B0091A;
     background-color: rgb(176 9 26 / 9%);
     padding: 15px;
+}
+
+.btn-like {
+    color: #B0081B;
+    border: none;
+    background: none;
 }
 
 /***************************/
