@@ -14,9 +14,9 @@
             <form method="post" class="mb-5 text-primary">
                 {{ form | crispy }}
                 {% csrf_token %}
-                <!--Page Links to Submit Recipe or Cancel to Leave page Redirect's to Browse-->
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <a class="btn btn-primary m-2" href="{% url 'browse' %}">Cancel</a>
+                <!--Submit recipe or cancel-->
+                <button type="submit" class="btn btn-primary">Send</button>
+                <a class="btn btn-primary m-2" href="{% url 'recipes' %}">Cancel</a>
             </form>
         </div>
         {% endif %}
