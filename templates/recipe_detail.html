@@ -2,30 +2,23 @@
 
 {% load crispy_forms_tags %}
 
-<!-- Hero image -->
-<section id="hero-outer">
-    <div id="hero-image">
-        <!-- Featured image -->
-        {% if "placeholder" in recipe.featured_image.url %}
-        <img src="{% static 'image/recipe-book.jpg' %}" width="100%">
-        {% else %}
-        <img src="{{ recipe.featured_image.url }}" width="100%">
-        {% endif %}
-    </div>
-    <div id="cover-text">
-        <h1 class="recipe-title">{{ recipe.title }}</h1>
-    </div>
-</section>
-
 <div class="masthead">
     <div class="container">
+        <h1 class="recipe-title">{{ recipe.title }}</h1>
         <!-- Recipe description and details, prep & cooking time -->
         <div class="row py-5">
-            <div class="col-8">{{ recipe.description | safe }}</div>
-            <div class="col-4">
+            <div class="col">{{ recipe.description | safe }}</div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <!-- Featured image -->
+                <img src="{{ recipe.featured_image.url }}" width="100%" alt="{{ recipe.title }}">
+            </div>
+            <div class="col-6">
+                <!-- Recipe Details -->
                 <p><i class="fa-solid fa-utensils icons"></i> Serves: {{ recipe.serves }}</p>
                 <p><i class="fa-solid fa-kitchen-set icons"></i> Prep Time: {{ recipe.prep_time }}</p>
-                <p><i class="fa-solid fa-fire-burner icons"></i> Cooking Time: {{ recipe.cooking_time }}</p>  
+                <p><i class="fa-solid fa-fire-burner icons"></i> Cooking Time: {{ recipe.cooking_time }}</p>
             </div>
         </div>
         <!-- Recipe ingredients and method -->
@@ -54,16 +47,18 @@
                             <form class="d-inline" action="{% url 'recipe_like' recipe.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i
+                                        class="fas fa-heart"></i></button>
                                 {% else %}
-                                <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i
+                                        class="far fa-heart"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
-                        <!-- The number of likes goes before the closing strong tag -->
-                        <span class="text-secondary">{{ recipe.number_of_likes }} </span>
+                            <!-- The number of likes goes before the closing strong tag -->
+                            <span class="text-secondary">{{ recipe.number_of_likes }} </span>
                         </strong>
                     </div>
                     <!-- Total comments -->
