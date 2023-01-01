@@ -7,7 +7,7 @@
     <div id="hero-image">
         <!-- Featured image -->
         {% if "placeholder" in recipe.featured_image.url %}
-        <img src="https://img.freepik.com/free-vector/recipe-book-concept-illustration_114360-7481.jpg?size=626&ext=jpg&uid=R15775267&semt=sph" width="100%">
+        <img src="{% static 'image/recipe-book.jpg' %}" width="100%">
         {% else %}
         <img src="{{ recipe.featured_image.url }}" width="100%">
         {% endif %}
