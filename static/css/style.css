@@ -93,7 +93,9 @@ footer {
 }
 
 .icons {
-    color: #B0081B;
+    color: rgb(133 189 166 / 80%);
+    color: black;
+    left: 0;
 }
 
 /***************************/
