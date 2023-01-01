@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+    <h1 class="text-primary text-center">Add Recipe</h1>    
+    <br>
+    <div class="row justify-content-center ">
+        {% if user.is_authenticated %}
+        {% load cloudinary %}
+        <div class="col-11 col-md-8 col-lg-6 mt-3">
+            <!--Add Recipe Form-->
+            <form method="post" class="mb-5 text-primary">
+                {{ form | crispy }}
+                {% csrf_token %}
+                <!--Page Links to Submit Recipe or Cancel to Leave page Redirect's to Browse-->
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a class="btn btn-primary m-2" href="{% url 'browse' %}">Cancel</a>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{%endblock%}
