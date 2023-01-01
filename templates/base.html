@@ -25,17 +25,17 @@
   <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}" />
   <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}" />
   <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}" />
-  <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}" />
+  <!-- <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}" /> -->
 
   <title>Fill your belly, feed your soul</title>
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
-  <!-- Navigation -->
   <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
+    <div class="container-fluid nav-background">
       <!-- Title and logo -->
-      <a class="navbar-brand" href="{% url 'home' %}">Fill your belly, feed your soul</a>
+      <a class="navbar-brand py-2" href="{% url 'home' %}"><img class="logo mx-4"
+          src="https://res.cloudinary.com/djwxldbab/image/upload/v1672337209/chef-hat_rv3gnl.webp" alt="logo"></a>
       <!-- Toggler -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,13 +98,13 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
   </script>
   <!-- Javascript Alert Messages from Code Institute: I think therefore I Blog -->
-  <script>
+  <!-- <script>
     setTimeout(function () {
       let messages = document.getElementById('msg');
       let alert = new bootstrap.Alert(messages);
       alert.close();
     }, 2500);
-  </script>
+  </script> -->
 </body>
 
 </html>
