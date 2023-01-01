@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.template.defaultfilters import slugify
 from cloudinary.models import CloudinaryField
 
 # Recipe status
@@ -48,6 +49,14 @@ class Recipe(models.Model):
         Returns the number of likes on a recipe
         """
         return self.likes.count()
+
+    def save(self, *args, **kwargs):
+        """
+        Generate unique slug
+        """
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
 
 
 class Comment(models.Model):
