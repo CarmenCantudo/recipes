@@ -1,19 +1,40 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
+from django.urls import reverse_lazy
 from .models import Recipe
-from .forms import CommentForm
+from .forms import CommentForm, RecipeForm
+
+
+class RecipeHome(generic.ListView):
+    """
+    Home page
+    """
+    def get(self, request):
+        recipes = Recipe.objects.filter(status=1).order_by('-created_on')[:6]
+        context = {
+                "recipes": recipes,
+                }
+        return render(request, 'index.html', context)
 
 
 class RecipeList(generic.ListView):
+    """
+    List all recipes
+    """
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')
-    template_name = 'index.html'
+    template_name = 'recipes.html'
     paginate_by = 6
 
 
 class RecipeDetail(View):
-
+    """
+    Recipe details
+    """
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
@@ -81,3 +102,19 @@ class RecipeLike(View):
             recipe.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+
+
+class AddRecipe(LoginRequiredMixin, CreateView):
+    """
+    Add a new recipe
+    """
+    model = Recipe
+    template_name = 'add_recipe.html'
+    form_class = RecipeForm
+    success_url = reverse_lazy('recipes')
+
+    def form_valid(self, form):
+        messages.success(self.request,
+                         "Recipe Successfully Added & Awaiting Approval")
+        form.instance.author = self.request.user
+        return super(CreateView, self).form_valid(form)
