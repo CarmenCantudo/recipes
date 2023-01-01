@@ -4,19 +4,56 @@ body {
     background-color: #F9FAFC;
 }
 
+.navbar {
+    padding: 0;
+}
+
+.out-banner {
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+
+    /* Change position to relative and cover-text to absolute to get it fixed in the section. */
+    position: relative;
+}
+
+.out-banner-recipes {
+    height: 200px;
+}
+
+.banner {
+    height: 100%;
+    width: 100%;
+    background-color: #FEEEDF;
+    background: url(https://res.cloudinary.com/djwxldbab/image/upload/v1672335293/recipe-banner_sc3y2k.webp) no-repeat center center;
+    background-size: cover;
+    align-items: start;
+    padding: 0;
+}
+
 .navbar-brand {
     font-family: 'Life Savers', cursive;
     font-size: 28px;
     font-weight: 600;
-    color: #B0081B;
+    color: #314E52;
+}
+
+.nav-background {
+    background-color: #518173;
+}
+
+.logo {
+    width: 40px;
 }
 
 .nav-link {
-    color: #B0081B;
+    color: #EFBB7F;
 }
 
 footer {
-    color: #B0081B;
+    color: #EFBB7F;
+    background-color: #518173;
 }
 
 /***************************/
@@ -46,6 +83,11 @@ footer {
 }
 
 .recipe-link {
+    text-decoration: none;
+    color: #445261;
+}
+
+.recipe-link:hover {
     text-decoration: none;
     color: #445261;
 }
