@@ -5,6 +5,9 @@
 <div class="masthead">
     <div class="container">
         <h1 class="recipe-title">{{ recipe.title }}</h1>
+        <small>{{ recipe.updated_on }}</small>
+        <br>
+        <small>By: {{ recipe.author }}</small>
         <!-- Recipe description and details, prep & cooking time -->
         <div class="row py-5">
             <div class="col">{{ recipe.description | safe }}</div>
@@ -33,6 +36,11 @@
             </div>
         </div>
     </div>
+        <!--Url page navigation links -->
+        <div class="text-center">                                                                                            
+            <a href="{% url 'edit_recipe' recipe.pk %}" class="btn btn-sm btn-outline-primary" role="button" aria-pressed="true">Edit</a>   
+            <a href="{% url 'recipes' %}" class="btn btn-sm btn-outline-primary" role="button" aria-pressed="true">More recipes</a>                                                                                            
+        </div>
 </div>
 
 <div class="container">

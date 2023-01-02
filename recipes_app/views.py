@@ -112,9 +112,30 @@ class AddRecipe(LoginRequiredMixin, CreateView):
     template_name = 'add_recipe.html'
     form_class = RecipeForm
     success_url = reverse_lazy('recipes')
+    pk_url_kwarg = 'pk'
 
     def form_valid(self, form):
         messages.success(self.request,
-                         "Recipe Successfully Added & Awaiting Approval")
+                         "Recipe added successfully and pending approval")
         form.instance.author = self.request.user
         return super(CreateView, self).form_valid(form)
+
+
+class EditRecipe(LoginRequiredMixin, UpdateView):
+    """
+    Edit a recipe
+    """
+    model = Recipe
+    template_name = 'edit_recipe.html'
+    form_class = RecipeForm
+    pk_url_kwarg = 'pk'
+    success_url = reverse_lazy('recipes')
+
+    def form_valid(self, form):
+        messages.success(self.request, "Recipe updated successfully")
+        form.instance.author = self.request.user
+        return super(UpdateView, self).form_valid(form)
+
+    def test_func(self):
+        recipe = self.get_object()
+        return recipe.author == self.request.user
