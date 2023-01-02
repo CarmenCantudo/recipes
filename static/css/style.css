@@ -47,6 +47,10 @@ body {
     width: 40px;
 }
 
+.username {
+    color: #EFBB7F;
+}
+
 .nav-link {
     color: #EFBB7F;
 }
