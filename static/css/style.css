@@ -56,8 +56,15 @@ body {
     color: #EFBB7F;
 }
 
+h3 {
+    font-family: 'Life Savers', cursive;
+    font-size: 36px;
+    font-weight: 900;
+}
+
 .intro {
     font-size: 20px;
+    line-height: 1.8;
 }
 
 .intro-recipe-title {
@@ -106,6 +113,8 @@ footer {
 
 .card-title {
     padding: 0 10px;
+    font-family: 'Life Savers', cursive;
+    font-weight: bold;
 }
 
 .card-img-top {
@@ -225,11 +234,23 @@ footer {
     align-self: center;
 }
 
+.recipe-title {
+    font-family: 'Life Savers', cursive;
+    font-size: 46px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.method ol li {
+    padding-bottom: 20px;
+    line-height: 1.8;
+}
+
 .comment-alert{
     border: 2px solid #b0091a2e;
     border-radius: 8px;
     padding: 5px;
-    color: #B0091A;
+    color: #E49645;
     background-color: rgb(176 9 26 / 9%);
     padding: 15px;
 }
