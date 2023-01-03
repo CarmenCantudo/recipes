@@ -25,7 +25,7 @@
         </div>
         <div class="col-6">
             <!-- Recipe Details -->
-            <div class="col intro py-5">{{ recipe.description | safe }}</div>
+            <div class="col intro pt-3 pb-5">{{ recipe.description | safe }}</div>
             <p><i class="fa-solid fa-utensils icons"></i> Serves: {{ recipe.serves }}</p>
             <p><i class="fa-solid fa-kitchen-set icons"></i> Prep Time: {{ recipe.prep_time }}</p>
             <p><i class="fa-solid fa-fire-burner icons"></i> Cooking Time: {{ recipe.cooking_time }}</p>
@@ -44,7 +44,7 @@
     </div>
     {% if user.id == recipe.author.id %}
     <!-- Edit, delete and more recipes links -->
-    <div class="row text-center">
+    <div class="text-center">
         <a href="{% url 'edit_recipe' recipe.pk %}" class="btn btn-sm orange-btn" role="button"
             aria-pressed="true">Edit</a>
         <a href="{% url 'delete_recipe' recipe.pk %}" class="btn btn-sm orange-btn" role="button"
