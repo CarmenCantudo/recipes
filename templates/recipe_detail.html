@@ -2,6 +2,10 @@
 
 {% load crispy_forms_tags %}
 
+{% load static %}
+
+{% load cloudinary %}
+
 <div class="masthead">
     <div class="container">
         <h1 class="recipe-title">{{ recipe.title }}</h1>
@@ -10,12 +14,16 @@
         <small>By: {{ recipe.author }}</small>
         <!-- Recipe description and details, prep & cooking time -->
         <div class="row py-5">
-            <div class="col">{{ recipe.description | safe }}</div>
+            <div class="col text-center">{{ recipe.description | safe }}</div>
         </div>
         <div class="row">
             <div class="col-6">
                 <!-- Featured image -->
-                <img src="{{ recipe.featured_image.url }}" width="100%" alt="{{ recipe.title }}">
+                {% if "placeholder" in recipe.featured_image.url %}
+                <img src="{% static 'image/recipe-book.jpg' %}" class="d-block w-100" alt="Recipe book">
+                {% else %}
+                <img src="{{ recipe.featured_image.url }}" class="d-block w-100" alt="{{ recipe.title }}">
+                {% endif %}
             </div>
             <div class="col-6">
                 <!-- Recipe Details -->
@@ -38,7 +46,8 @@
     </div>
         <!--Url page navigation links -->
         <div class="text-center">                                                                                            
-            <a href="{% url 'edit_recipe' recipe.pk %}" class="btn btn-sm btn-outline-primary" role="button" aria-pressed="true">Edit</a>   
+            <a href="{% url 'edit_recipe' recipe.pk %}" class="btn btn-sm btn-outline-primary" role="button" aria-pressed="true">Edit</a>
+            <a href="{% url 'delete_recipe' recipe.pk %}" class="btn btn-sm btn-outline-primary" role="button" aria-pressed="true">Delete</a>
             <a href="{% url 'recipes' %}" class="btn btn-sm btn-outline-primary" role="button" aria-pressed="true">More recipes</a>                                                                                            
         </div>
 </div>

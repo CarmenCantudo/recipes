@@ -4,6 +4,8 @@
 
 {% load static %}
 
+{% load cloudinary %}
+
 <div class="container-fluid out-banner">
     <div class="banner"></div>
 </div>
@@ -14,6 +16,7 @@
         {% for recipe in recipes %}
         <div class="col-2">
             <a class="recipe-link" href="{% url 'recipe_detail' recipe.slug %}">
+                <!-- Featured image -->
                 {% if "placeholder" in recipe.featured_image.url %}
                 <img src="{% static 'image/recipe-book.jpg' %}" class="d-block w-100" alt="Recipe book">
                 {% else %}
