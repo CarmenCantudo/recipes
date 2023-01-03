@@ -14,7 +14,7 @@ class RecipeHome(generic.ListView):
     Home page
     """
     def get(self, request):
-        recipes = Recipe.objects.filter(status=1).order_by('-created_on')[:6]
+        recipes = Recipe.objects.filter(status=1).order_by('-created_on')[:8]
         context = {
                 "recipes": recipes,
                 }
