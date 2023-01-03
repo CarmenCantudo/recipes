@@ -2,6 +2,7 @@
 
 body {
     background-color: #F9FAFC;
+    min-height: 100vh;
 }
 
 .navbar {
@@ -97,8 +98,7 @@ footer {
 }
 
 .icons {
-    color: rgb(133 189 166 / 80%);
-    color: black;
+    color: #518173;
     left: 0;
 }
 
