@@ -139,3 +139,18 @@ class EditRecipe(LoginRequiredMixin, UpdateView):
     def test_func(self):
         recipe = self.get_object()
         return recipe.author == self.request.user
+
+
+class DeleteRecipe(LoginRequiredMixin, DeleteView):
+    """
+    Delete a recipe
+    """
+    model = Recipe
+    template_name = 'delete_recipe.html'
+    pk_url_kwarg = 'pk'
+    success_url = reverse_lazy('recipes')
+
+    def form_valid(self, form):
+        messages.success(self.request, "Recipe deleted successfully")
+        form.instance.author = self.request.user
+        return super(DeleteView, self).form_valid(form)

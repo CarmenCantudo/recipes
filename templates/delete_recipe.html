@@ -1,0 +1,136 @@
+{% extends 'base.html' %} {% block content %}
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+<div class="masthead">
+    <div class="container">
+        <h1 class="recipe-title">{{ recipe.title }}</h1>
+        <small>{{ recipe.updated_on }}</small>
+        <br>
+        <small>By: {{ recipe.author }}</small>
+        <!-- Recipe description and details, prep & cooking time -->
+        <div class="row py-5">
+            <div class="col">{{ recipe.description | safe }}</div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <!-- Featured image -->
+                {% if "placeholder" in recipe.featured_image.url %}
+                <img src="{% static 'image/recipe-book.jpg' %}" class="d-block w-100" alt="Recipe book">
+                {% else %}
+                <img src="{{ recipe.featured_image.url }}" class="d-block w-100" alt="{{ recipe.title }}">
+                {% endif %}
+            </div>
+            <div class="col-6">
+                <!-- Recipe Details -->
+                <p><i class="fa-solid fa-utensils icons"></i> Serves: {{ recipe.serves }}</p>
+                <p><i class="fa-solid fa-kitchen-set icons"></i> Prep Time: {{ recipe.prep_time }}</p>
+                <p><i class="fa-solid fa-fire-burner icons"></i> Cooking Time: {{ recipe.cooking_time }}</p>
+            </div>
+        </div>
+    </div>
+    {% if request.user.username == recipe.author %}
+    <!-- Delete recipe -->
+    <br>
+    <h5 class="text-danger text text-center">Are you sure you want to delete your recipe?</h5>
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">Delete</button>
+        <a class="btn btn-primary" href="{% url 'recipes' %}">Cancel</a>
+    </div>
+    {% else %}
+    <br>
+    <h5 class="text-danger text text-center">You are not authorised to delete this recipe.</h5>
+    {% endif %}
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4 mt-3 left top">
+            <div class="card-body">
+                <div class="row">
+                    <!-- Number of likes -->
+                    <div class="col-1">
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'recipe_like' recipe.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i
+                                        class="fas fa-heart"></i></button>
+                                {% else %}
+                                <button type="submit" name="recipe_id" value="{{recipe.slug}}" class="btn-like"><i
+                                        class="far fa-heart"></i></button>
+                                {% endif %}
+                            </form>
+                            {% else %}
+                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            {% endif %}
+                            <!-- The number of likes goes before the closing strong tag -->
+                            <span class="text-secondary">{{ recipe.number_of_likes }} </span>
+                        </strong>
+                    </div>
+                    <!-- Total comments -->
+                    <div class="col-1">
+                        {% with comments.count as total_comments %}
+                        <strong class="text-secondary"><i class="far fa-comments icons"></i>
+                            {{ total_comments }}</strong>
+                        {% endwith %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <h3>Comments:</h3>
+            <div class="card-body">
+                <!-- We want a for loop inside the tags to iterate through each comment in comments -->
+                {% for comment in comments %}
+                <div class="comments" style="padding: 10px;">
+                    <p class="font-weight-bold">
+                        <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
+                        {{ comment.name }}
+                        <span class=" text-muted font-weight-normal">
+                            <!-- The comment's created date goes here -->
+                            {{ comment.created_on }}
+                        </span> wrote:
+                    </p>
+                    <!-- The body of the comment goes before the | -->
+                    {{ comment.body | linebreaks }}
+                </div>
+                <!-- Our for loop ends here -->
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-4 card mb-4  mt-3 ">
+            <div class="card-body">
+                <!-- Leave a comment if user authenticated and show message if commented -->
+                {% if commented %}
+                <div class="alert comment-alert" role="alert">
+                    Your comment is awaiting approval
+                </div>
+                {% else %}
+                {% if user.is_authenticated %}
+
+                <h3>Leave a comment:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    <!-- Protection against attacks -->
+                    {% csrf_token %}
+                </form>
+                {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
