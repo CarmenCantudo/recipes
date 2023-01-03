@@ -6,47 +6,45 @@
 
 {% load cloudinary %}
 
-<div class="masthead">
-    <div class="container">
-        <h1 class="recipe-title">{{ recipe.title }}</h1>
+<div class="container">
+    <div class="row">
+        <h1 class="recipe-title py-3">{{ recipe.title }}</h1>
         <small>{{ recipe.updated_on }}</small>
         <br>
         <small>By: {{ recipe.author }}</small>
-        <!-- Recipe description and details, prep & cooking time -->
-        <div class="row">
-            <div class="col-6">
-                <!-- Featured image -->
-                {% if "placeholder" in recipe.featured_image.url %}
-                <img src="{% static 'image/recipe-book.jpg' %}" class="d-block w-100" alt="Recipe book">
-                {% else %}
-                <img src="{{ recipe.featured_image.url }}" class="d-block w-100" alt="{{ recipe.title }}">
-                {% endif %}
-            </div>
-            <div class="col-6">
-                <!-- Recipe Details -->
-                <div class="row py-5">
-                    <div class="col">{{ recipe.description | safe }}</div>
-                </div>
-                <p><i class="fa-solid fa-utensils icons"></i> Serves: {{ recipe.serves }}</p>
-                <p><i class="fa-solid fa-kitchen-set icons"></i> Prep Time: {{ recipe.prep_time }}</p>
-                <p><i class="fa-solid fa-fire-burner icons"></i> Cooking Time: {{ recipe.cooking_time }}</p>
-            </div>
+    </div>
+    <!-- Recipe description and details, prep & cooking time -->
+    <div class="row">
+        <div class="col-6 py-3">
+            <!-- Featured image -->
+            {% if "placeholder" in recipe.featured_image.url %}
+            <img src="{% static 'image/recipe-book.jpg' %}" class="d-block w-100" alt="Recipe book">
+            {% else %}
+            <img src="{{ recipe.featured_image.url }}" class="d-block w-100" alt="{{ recipe.title }}">
+            {% endif %}
         </div>
-        <!-- Recipe ingredients and method -->
-        <div class="row py-5">
-            <div class="col-4">
-                <h4>Ingredients</h4>
-                {{ recipe.ingredients | safe }}
-            </div>
-            <div class="col-8">
-                <h4>Method</h4>
-                {{ recipe.method | safe }}
-            </div>
+        <div class="col-6">
+            <!-- Recipe Details -->
+            <div class="col intro py-5">{{ recipe.description | safe }}</div>
+            <p><i class="fa-solid fa-utensils icons"></i> Serves: {{ recipe.serves }}</p>
+            <p><i class="fa-solid fa-kitchen-set icons"></i> Prep Time: {{ recipe.prep_time }}</p>
+            <p><i class="fa-solid fa-fire-burner icons"></i> Cooking Time: {{ recipe.cooking_time }}</p>
+        </div>
+    </div>
+    <!-- Recipe ingredients and method -->
+    <div class="row py-5">
+        <div class="col-5">
+            <h4>Ingredients</h4>
+            {{ recipe.ingredients | safe }}
+        </div>
+        <div class="col-7 method">
+            <h4 class="ps-3">Method</h4>
+            {{ recipe.method | safe }}
         </div>
     </div>
     {% if user.id == recipe.author.id %}
     <!-- Edit, delete and more recipes links -->
-    <div class="text-center">
+    <div class="row text-center">
         <a href="{% url 'edit_recipe' recipe.pk %}" class="btn btn-sm orange-btn" role="button"
             aria-pressed="true">Edit</a>
         <a href="{% url 'delete_recipe' recipe.pk %}" class="btn btn-sm orange-btn" role="button"
@@ -129,7 +127,7 @@
                         aria-pressed="true">Delete</a>
                     {% endif %}
                 </div>
-                
+
                 <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
