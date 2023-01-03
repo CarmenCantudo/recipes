@@ -122,7 +122,14 @@
                     </p>
                     <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
+                    {% if comment.name == user.username %}
+                    <a href="{% url 'edit_comment' comment.id %}" class="btn btn-sm comment-btn" role="button"
+                        aria-pressed="true">Edit</a>
+                    <a href="{% url 'delete_comment' comment.id %}" class="btn btn-sm comment-btn" role="button"
+                        aria-pressed="true">Delete</a>
+                    {% endif %}
                 </div>
+                
                 <!-- Our for loop ends here -->
                 {% endfor %}
             </div>

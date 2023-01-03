@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.urls import reverse_lazy
-from .models import Recipe
+from .models import Recipe, Comment
 from .forms import CommentForm, RecipeForm
 
 
@@ -154,3 +154,40 @@ class DeleteRecipe(LoginRequiredMixin, DeleteView):
         messages.success(self.request, "Recipe deleted successfully")
         form.instance.author = self.request.user
         return super(DeleteView, self).form_valid(form)
+
+
+class EditComment(LoginRequiredMixin, UpdateView):
+    """
+    Edit a comment
+    """
+    model = Comment
+    form_class = CommentForm
+    template_name = 'edit_comment.html'
+    success_url = reverse_lazy('recipes')
+
+    def form_valid(self, form):
+        messages.success(self.request, "Comment updated successfully")
+        form.instance.name = self.request.user.username
+        return super().form_valid(form)
+
+    def test_func(self):
+        comment = self.get_object()
+        return comment.name == self.request.user.username
+
+
+class DeleteComment(LoginRequiredMixin, DeleteView):
+    """
+    Delete a comment
+    """
+    model = Comment
+    template_name = 'delete_comment.html'
+    success_message = 'Comment deleted successfully'
+    success_url = reverse_lazy('recipes')
+
+    def test_func(self):
+        comment = self.get_object()
+        return comment.name == self.request.user.username
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DeleteComment, self).delete(request, *args, **kwargs)

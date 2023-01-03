@@ -12,4 +12,8 @@ urlpatterns = [
          name='delete_recipe'),
     path('<slug:slug>/', views.RecipeDetail.as_view(), name='recipe_detail'),
     path('like/<slug:slug>/', views.RecipeLike.as_view(), name='recipe_like'),
+    path('comment/<int:pk>/edit', views.EditComment.as_view(),
+         name='edit_comment'),
+    path('comment/<int:pk>/delete', views.DeleteComment.as_view(),
+         name='delete_comment'),
 ]
