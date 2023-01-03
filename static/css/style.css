@@ -56,6 +56,33 @@ body {
     color: #EFBB7F;
 }
 
+.intro {
+    font-size: 20px;
+}
+
+.intro-recipe-title {
+    font-size: smaller;
+}
+
+.zoom {
+    transition: transform .2s;
+}
+
+.zoom:hover {
+    transform: scale(1.05);
+}
+
+.orange-btn {
+    color: #E49645;
+    background-color: #F8F6E6;
+    border-color: #E49645;
+}
+
+.orange-btn:hover {
+    background-color: #E49645;
+    color: #F8F6E6;
+}
+
 footer {
     color: #EFBB7F;
     background-color: #518173;
@@ -102,7 +129,7 @@ footer {
 }
 
 .icons {
-    color: #518173;
+    color: #E49645;
     left: 0;
 }
 
