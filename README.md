@@ -28,6 +28,7 @@ This is a recipe website that is open to everyone who loves cooking and wants to
     - [Future Features](#future-features)
   - [UX](#ux)
     - [Site Purpose](#site-purpose)
+    - [Agile Methodology](#agile-methodology)
     - [User Stories](#user-stories)
   - [Design](#design)
     - [Flow Diagram](#flow-diagram)
@@ -88,9 +89,51 @@ This is a recipe website that is open to everyone who loves cooking and wants to
 - To respond to user inputs and actions in a clear and accurate way.
 
 
+### Agile Methodology
+
+The Agile Methodology was used to plan and manage this project. Issues were created on Github so that tasks could be assigned and prioritised usign the Project Board. A User Story was created for each task, with specific requirements and deadlines.
+
 ### User Stories
 
-- 
+- USER STORY: View recipe list
+  
+  As a Site User I can view a list of recipes so that I can select one to read.
+
+- USER STORY: Manage recipes
+  
+  As a Site User / Admin I can create, read, update and delete recipes so that I can manage recipes.
+
+- USER STORY: Likes
+  
+  As a Site User / Admin I can like / unlike recipes so that anybody can see which is the most popular.
+
+- USER STORY: Update / Delete Comments
+  
+  As a Site User I can update and delete comments on a recipe so that I can edit or remove any comments I've posted
+
+- USER STORY: View / Leave Comments
+  
+  As a Site User I can view and leave comments on a recipe so that I can learn more about the recipe and participate in the conversation.
+
+- USER STORY: Account Registration / Login
+  
+  As a Site User I can register and log into an account so that I can add recipes, comment on them and like them.
+
+- USER STORY: Create drafts
+  
+  As a Site User I can create draft recipes so that I can finish writing the content later.
+
+- USER STORY: Open a recipe
+  
+  As a Site User I can open a recipe so that I can read the recipe's steps, ingredients and comments.
+
+- USER STORY: Search recipes
+  
+  As a Site User I can search for recipes so that I can select one to read.
+
+- USER STORY: Site pagination
+
+  As a Site User I can view a paginated list of recipes so that I can easily select a recipe to view.
 
 
 [Back to top](#fill-your-belly-feed-your-soul)
