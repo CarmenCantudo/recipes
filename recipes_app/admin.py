@@ -14,6 +14,10 @@ class RecipeAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     list_filter = ('status', 'created_on')
     summernote_fields = ('ingredients', 'method')
+    actions = ['publish_recipes']
+
+    def publish_recipes(self, request, queryset):
+        queryset.update(status='1')
 
 
 @admin.register(Comment)
