@@ -7,6 +7,11 @@ body {
 
 .navbar {
     padding: 0;
+    position: relative;
+}
+
+.message {
+    position: absolute;
 }
 
 .out-banner {
@@ -160,6 +165,10 @@ footer {
 /***********************/
 /****** Add recipe *****/
 /***********************/
+
+.add-form {
+    width: fit-content;
+}
 
 .form-group {
     margin: 10px 0;

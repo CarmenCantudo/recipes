@@ -1,3 +1,187 @@
+# Fill your belly, feed your soul
+
+![Responsive web image](assets/testing/am-i-responsive.png)
+
+The Live Website can be accessed [HERE!](https://fillyourbelly.herokuapp.com/)
+
+This is a recipe website that is open to everyone who loves cooking and wants to explore new recipes. The site’s main purpose is to allow users to browse and view recipes whether they are registered or not. Registered users can also add, update and delete their own recipes on the app, like or dislike recipes, and leave comments that can be updated or deleted by the user.
+
+
+
+<br>
+
+## Table of Contents
+- [Fill your belly, feed your soul](#fill-your-belly-feed-your-soul)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+    - [Existing Features](#existing-features)
+      - [Home Page](#home-page)
+      - [Recipes Page](#recipes-page)
+      - [Add Recipes Page](#add-recipes-page)
+      - [Recipe Details Page](#recipe-details-page)
+      - [Edit Recipe Page](#edit-recipe-page)
+      - [Delete Recipe Page](#delete-recipe-page)
+      - [Edit Comment Page](#edit-comment-page)
+      - [Delete Comment Page](#delete-comment-page)
+      - [User Account Pages](#user-account-pages)
+      - [Admin Control](#admin-control)
+    - [Future Features](#future-features)
+  - [UX](#ux)
+    - [Site Purpose](#site-purpose)
+    - [User Stories](#user-stories)
+  - [Design](#design)
+    - [Flow Diagram](#flow-diagram)
+  - [Testing](#testing)
+    - [Bugs Fixed](#bugs-fixed)
+  - [Technologies Used](#technologies-used)
+  - [Deployment](#deployment)
+    - [Using Heroku](#using-heroku)
+    - [How to Fork it](#how-to-fork-it)
+    - [How to Clone it](#how-to-clone-it)
+    - [Making a Local Clone](#making-a-local-clone)
+  - [Credits](#credits)
+  - [Gitpod Reminders](#gitpod-reminders)
+  - [Release History](#release-history)
+  - [FAQ about the uptime script](#faq-about-the-uptime-script)
+
+
+## Features
+### Existing Features
+#### Home Page
+
+#### Recipes Page
+
+#### Add Recipes Page
+
+#### Recipe Details Page
+
+#### Edit Recipe Page
+
+#### Delete Recipe Page
+
+#### Edit Comment Page
+
+#### Delete Comment Page
+
+#### User Account Pages
+
+#### Admin Control
+
+[Back to top](#fill-your-belly-feed-your-soul)
+
+### Future Features
+
+- 
+- 
+
+[Back to top](#fill-your-belly-feed-your-soul)
+
+## UX
+### Site Purpose
+- To make the app user-friendly and aesthetically pleasing while still meeting the needs of the user. 
+- The app is designed for anyone who enjoys cooking and wants to find recipes and cooking tips.
+- To have a website where you can view recipes and choose one to cook.
+- To make sure that everyone who visits our website finds recipes they'll love, so we've put together a list of great food-related ideas.
+- This app allows you to create, update, and delete your recipes.
+- To allow users to approve, update and delete their recipes.
+- To give the admin user the power to approve, update, and delete recipes.
+- To respond to user inputs and actions in a clear and accurate way.
+
+
+### User Stories
+
+- 
+
+
+[Back to top](#fill-your-belly-feed-your-soul)
+
+## Design
+
+### Flow Diagram
+
+[Flow diagram](assets/testing/flow-chart.png)
+
+The flow chart above, created with the website [Lucidchart](https://lucid.app/), provides a simplified overview of what I was trying to accomplish.
+
+## Testing
+
+- The application was constantly tested during development.
+- To validate the code, the [PEP8 online validation tool](http://pep8online.com/) was used. The issues discovered are related to the blank spaces in the ASCII pictures.
+- Lighthouse was used to test the app for Performance, Accessibility and Best Practices:
+  
+  ![Lighthouse Performance](assets/testing/lighthouse.png)
+
+
+### Bugs Fixed
+During the creation of the while loops with the nested if statements, I had some problems and had to research and learn how to use it properly making each if, elif, else break or call the right function to continue with the next part of the story.
+
+
+[Back to top](#fill-your-belly-feed-your-soul)
+
+## Technologies Used
+
+- Python: Main language.
+- [GitHub](https://github.com/): Used to store my repository for submission.
+- [Gitpod](https://gitpod.io/): Used to develop the application.
+- GitBash: Used to push the repository to Github.
+- [Heroku](https://www.heroku.com/): Used host and deploy the application.
+- [Lucidchart](https://www.lucidchart.com/): Used to make a flow diagram to help with the logic & flow of the code.
+- [Am I Responsive?](https://ui.dev/amiresponsive): to ensure the project looked good across all devices.
+- [Markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/): to complete the Readme.
+
+[Back to top](#fill-your-belly-feed-your-soul)
+
+## Deployment
+
+### Using Heroku
+1. Use [Heroku](https://www.heroku.com/) to create a new app.
+2. In Settings, add two buildpacks in the following order:
+   - Python
+   - NodeJS
+3. Link the new app to the appropriate repository after granting Heroku access to GitHub.
+4. Make the decision to enable Automatic Deploys or not. If enabled, each push to GitHub will result in an automatic update of the deployed app.
+5. Click Deploy.
+
+
+### How to Fork it
+1. On GitHub, go to [CarmenCantudo/recipes]( https://github.com/CarmenCantudo/recipes).
+2. In the top right, click "Fork".
+
+### How to Clone it
+1. Go to the main page of the repository.
+3. Above the file list, click "Code".
+4. Select HTTPS, SSH, or GitHub CLI and then click copy to clone it.
+5. Open Git Bash.
+6. Change the location of your cloned repository.
+7. Type `git clone` and then paste the URL you copied.
+8. Press “Enter” to create your clone.
+
+### Making a Local Clone
+1. Locate the [Repository]( https://github.com/CarmenCantudo/recipes).
+2. Click "Code".
+3. Click Clone or Download.
+4. Copy the Git URL from the dialogue box.
+5. Open a terminal window in your choosen directory using your preferred development editor.
+6. Change the location to where you want the cloned directory to be.
+7. Type `git clone`, and then paste the URL you copied.
+8. Press Enter, and your local clone will be created.
+
+[Back to top](#fill-your-belly-feed-your-soul)
+
+## Credits
+
+Resources used in the process of the "Lost Dragon's Quest" website design and build:
+- [Create A Simple Django Blog | Codemy.com](https://www.youtube.com/playlist?list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi)
+- [ASCII Generator](https://ascii-generator.site/)
+- [StackOverFlow](https://stackoverflow.com/): Help with general questions
+- I think therefore I blog Code Institute project.
+- [Python Essentials Template](https://github.com/Code-Institute-Org/python-essentials-template) provided by Code Institute
+
+[Back to top](#fill-your-belly-feed-your-soul)
+
+
+
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome Carmen,
