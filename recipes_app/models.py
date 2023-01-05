@@ -8,6 +8,20 @@ STATUS = ((0, "Draft"), (1, "Published"))
 LEVEL = ((0, "Easy"), (1, "Medium"), (2, "Hard"))
 
 
+class Category(models.Model):
+    """
+    Category Model
+    Modified from Add Blog Categories - Django Blog #12 https://youtu.be/_ph8GF84fX4
+    """
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('home')
+
+
 class Recipe(models.Model):
     """
     Recipe Model
@@ -19,6 +33,7 @@ class Recipe(models.Model):
         User, on_delete=models.CASCADE, related_name="recipe_posts")
     created_on = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated_on = models.DateTimeField(auto_now=True)
+    category = models.CharField(max_length=200, default='uncategorised')
     description = models.TextField(blank=True,
                                    help_text="Describe the recipe")
     difficulty = models.IntegerField(choices=LEVEL, default=1)

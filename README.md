@@ -163,22 +163,22 @@ During the creation of the while loops with the nested if statements, I had some
 
 ## Technologies Used
 
-- HTML - Used to structure all the templates on the site.
-- CSS - To provide extra styling to the site.
-- Python - To provide the functionality to the site. Packages used in the project can be found in requirements.txt.
-- Django - Python framework used in the project.
-- Javascript - Minimum javascript was used to fade out alerts.
-- Bootstrap 4 - To create layouts and styles for the website.
+- HTML: Used to structure all the templates on the site.
+- CSS: To provide extra styling to the site.
+- Python: To provide the functionality to the site. Packages used in the project can be found in requirements.txt.
+- Django: Python framework used in the project.
+- Javascript: Minimum javascript was used to fade out alerts.
+- Bootstrap 4: To create layouts and styles for the website.
 - [GitHub](https://github.com/): Used to store my repository for submission.
 - [Gitpod](https://gitpod.io/): Used to develop the application.
 - GitBash: Used to push the repository to Github.
 - [Heroku](https://www.heroku.com/): Used to deploy the website.
-- [ElephantSQL](https://www.elephantsql.com/) - Used for the database during development and deployment.
-- [Cloudinary](https://cloudinary.com/) - To host Static files for the site.
+- [ElephantSQL](https://www.elephantsql.com/): Used for the database during development and deployment.
+- [Cloudinary](https://cloudinary.com/): To host Static files for the site.
 - [Lucidchart](https://www.lucidchart.com/): Used to make a flow diagram to help with the logic & flow of the code.
-- [Balsamiq](https://balsamiq.com/) - To create wireframes for the project.
-- [Am I Responsive?](https://ui.dev/amiresponsive): to ensure the project looked good across all devices.
-- [Markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/): to complete the Readme.
+- [Balsamiq](https://balsamiq.com/): To create wireframes for the project.
+- [Am I Responsive?](https://ui.dev/amiresponsive): To ensure the project looked good across all devices.
+- [Favicon](https://favicon.io/favicon-converter/) - To create the favicon icon.
 
 
 [Back to top](#fill-your-belly-feed-your-soul)
