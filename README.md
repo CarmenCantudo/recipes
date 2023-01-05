@@ -142,7 +142,7 @@ The Agile Methodology was used to plan and manage this project. Issues were crea
 
 ### Flow Diagram
 
-[Flow diagram](assets/testing/flow-chart.png)
+[Flow diagram](static/testing/Database_ER_diagram.jpeg)
 
 The flow chart above, created with the website [Lucidchart](https://lucid.app/), provides a simplified overview of what I was trying to accomplish.
 
