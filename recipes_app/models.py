@@ -11,7 +11,8 @@ LEVEL = ((0, "Easy"), (1, "Medium"), (2, "Hard"))
 class Category(models.Model):
     """
     Category Model
-    Modified from Add Blog Categories - Django Blog #12 https://youtu.be/_ph8GF84fX4
+    Modified from Add Blog Categories - Django Blog #12
+    https://youtu.be/_ph8GF84fX4
     """
     name = models.CharField(max_length=200)
 
