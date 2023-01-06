@@ -10,6 +10,23 @@ body {
     position: relative;
 }
 
+.dropdown-menu {
+    background-color: #518173;
+}
+
+.dropdown-link {
+    color: #EFBB7F;
+}
+
+.cap-cat {
+    text-transform: capitalize;
+}
+
+.cat-pill {
+    background-color: #518173;
+    color: #EFBB7F;
+}
+
 .message {
     position: absolute;
 }

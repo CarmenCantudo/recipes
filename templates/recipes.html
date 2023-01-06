@@ -13,9 +13,10 @@
         </div>
         <div class="row">
             <nav class="nav nav-pills nav-justified">
-                {% for cat in cats %}
-                <a class="nav-item nav-link" href="{% url 'category' recipe.category %}">{{ cat }}</a>
-                {% endfor %}
+                <a class="nav-item nav-link cap-cat cat-pill" href="{% url 'recipes'">All recipes</a>
+                {% for item in cat_menu %}
+                <a class="nav-item nav-link cap-cat cat-pill" href="{% url 'categories' item|slugify %}">{{ item }}</a>
+            {% endfor %}
             </nav>
         </div>
     </div>
