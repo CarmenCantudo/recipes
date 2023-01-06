@@ -36,14 +36,13 @@ This is a recipe website that is open to everyone who loves cooking and wants to
     - [Bugs to fix](#bugs-to-fix)
   - [Technologies Used](#technologies-used)
   - [Deployment](#deployment)
-    - [Using Heroku](#using-heroku)
+    - [Github](#github)
+    - [Django and Heroku](#django-and-heroku)
+      - [Final Deployment](#final-deployment)
     - [How to Fork it](#how-to-fork-it)
     - [How to Clone it](#how-to-clone-it)
     - [Making a Local Clone](#making-a-local-clone)
   - [Credits](#credits)
-  - [Gitpod Reminders](#gitpod-reminders)
-  - [Release History](#release-history)
-  - [FAQ about the uptime script](#faq-about-the-uptime-script)
 
 
 ## Features
@@ -207,10 +206,7 @@ The flow chart above, created with the website [Lucidchart](https://lucid.app/),
 
 ## Testing
 
-- The application was constantly tested during development.
-- Lighthouse was used to test the app for Performance, Accessibility and Best Practices:
-  
-  ![Lighthouse Performance](assets/testing/lighthouse.png)
+The website was constantly tested during development.
 
 ### User Testing
 
@@ -225,9 +221,6 @@ The flow chart above, created with the website [Lucidchart](https://lucid.app/),
   The app's landing page was appropriate and welcoming, and the home page let me know what the app was about and what its features were. The navigation was easy to follow and I could understand everything on each page. The information was clear and I could make choices about what I wanted to do (read, add, edit, delete recipes and comments). When I made a mistake, I was told what I needed to do and given directions on how to fix the problem.
 
 ### Manual Testing
-
-<details>
-  <summary>Navigation Bar
 
 | **Navigation Bar** | Status
 |:-------:|:--------|
@@ -322,14 +315,30 @@ After sending a comment, if a user wants to send another comment it shows an err
 
 ## Deployment
 
-### Using Heroku
-1. Use [Heroku](https://www.heroku.com/) to create a new app.
-2. In Settings, add two buildpacks in the following order:
-   - Python
-   - NodeJS
-3. Link the new app to the appropriate repository after granting Heroku access to GitHub.
-4. Make the decision to enable Automatic Deploys or not. If enabled, each push to GitHub will result in an automatic update of the deployed app.
-5. Click Deploy.
+### Github 
+
+To create a new repository, I took the following steps:
+
+1. Logged into GitHub.
+2. Click the ‘repositories’ section.
+3. Click the green ‘new’ button to create new repository.
+4. Choose ‘repository template’ Used the code institute template as recommended from the dropdown menu.
+5. Add repository name then clicked the green ‘create repository button’ at the bottom of the page.
+6. Open the new repository and clicked the green ‘Gitpod’ button to create a workspace in Gitpod for editing.
+
+### Django and Heroku
+
+To get the Django framework installed and set up I followed the Code institute [I Think Therefore I Blog cheatsheet](https://docs.google.com/document/d/1P5CWvS5cYalkQOLeQiijpSViDPogtKM7ZGyqK-yehhQ/edit).
+
+#### Final Deployment 
+    DEBUG = False
+
+    X_FRAME_OPTIONS = 'SAMEORIGIN' 
+
+    In Heroku go to Reveal Congfig Vars  
+    Remove Disbable_Collectstatic
+
+    Go to Deploy Tab & Deploy Branch
 
 ### How to Fork it
 1. On GitHub, go to [CarmenCantudo/recipes]( https://github.com/CarmenCantudo/recipes).
@@ -358,123 +367,10 @@ After sending a comment, if a user wants to send another comment it shows an err
 
 ## Credits
 
-Resources used in the process of the "Lost Dragon's Quest" website design and build:
+Resources used in the process of the "Fill your belly, feed your soul" website design and build:
 - [Create A Simple Django Blog | Codemy.com](https://www.youtube.com/playlist?list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi)
-- [ASCII Generator](https://ascii-generator.site/)
-- [StackOverFlow](https://stackoverflow.com/): Help with general questions
+- [StackOverFlow](https://stackoverflow.com/): Help with general questions.
 - I think therefore I blog Code Institute project.
-- [Python Essentials Template](https://github.com/Code-Institute-Org/python-essentials-template) provided by Code Institute
+- [Images and icon](https://www.freepik.com/).
 
 [Back to top](#fill-your-belly-feed-your-soul)
-
-
-
-
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome Carmen,
-
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
-
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
