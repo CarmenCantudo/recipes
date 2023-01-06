@@ -9,6 +9,7 @@ category_list = []
 # Add to category_list
 for item in category:
     category_list.append(item)
+    sorted_category_list = sorted(category_list)
 
 
 class CommentForm(forms.ModelForm):
@@ -40,7 +41,7 @@ class RecipeForm(forms.ModelForm):
         ]
 
         widgets = {
-            'category': forms.Select(choices=category_list),
+            'category': forms.Select(choices=sorted_category_list),
             'method': SummernoteWidget(),
             'ingredients': SummernoteWidget(),
         }

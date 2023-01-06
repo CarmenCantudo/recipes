@@ -30,6 +30,12 @@ class RecipeList(generic.ListView):
     template_name = 'recipes.html'
     paginate_by = 9
 
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all().order_by("name")
+        context = super(RecipeList, self).get_context_data(*args, **kwargs)
+        context['cat_menu'] = cat_menu
+        return context
+
 
 class RecipeCategory(generic.ListView):
     """
@@ -39,9 +45,10 @@ class RecipeCategory(generic.ListView):
     template_name = 'categories.html'
 
     def get(self, request, cats):
-        recipe_cats = Recipe.objects.filter(category=cats)
+        recipe_cats = Recipe.objects.filter(category=cats.replace('-', ' ')
+                                            .order_by('-id'))
         context = {
-                'cats': cats.title(),
+                'cats': cats.title().replace('-', ' '),
                 'recipe_cats': recipe_cats
                 }
         return render(request, 'categories.html', context)
