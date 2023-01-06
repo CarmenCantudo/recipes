@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.urls import reverse_lazy
-from .models import Recipe, Comment
+from .models import Recipe, Comment, Category
 from .forms import CommentForm, RecipeForm
 
 
@@ -29,6 +29,22 @@ class RecipeList(generic.ListView):
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')
     template_name = 'recipes.html'
     paginate_by = 9
+
+
+class RecipeCategory(generic.ListView):
+    """
+    Category page
+    """
+    model = Category
+    template_name = 'categories.html'
+
+    def get(self, request, cats):
+        recipe_cats = Recipe.objects.filter(category=cats)
+        context = {
+                'cats': cats.title(),
+                'recipe_cats': recipe_cats
+                }
+        return render(request, 'categories.html', context)
 
 
 class RecipeDetail(View):
