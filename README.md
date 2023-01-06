@@ -20,6 +20,8 @@ This is a recipe website that is open to everyone who loves cooking and wants to
       - [Recipe Details Page](#recipe-details-page)
       - [Edit Recipe Page](#edit-recipe-page)
       - [Delete Recipe Page](#delete-recipe-page)
+      - [Comments section](#comments-section)
+      - [User Account Pages](#user-account-pages)
       - [Admin Control](#admin-control)
     - [Future Features](#future-features)
   - [UX](#ux)
@@ -68,9 +70,10 @@ This is a recipe website that is open to everyone who loves cooking and wants to
 
 ![Delete Recipe](static/testing/delete_recipe.png)
 
+#### Comments section
 
 <details>
-  <summary>#### Comments section</summary>
+  <summary>Comments section</summary>
 
 ![Comment section](static/testing/comments.png)
 
@@ -92,10 +95,10 @@ This is a recipe website that is open to everyone who loves cooking and wants to
 
 </details>
 
-
+#### User Account Pages
 
 <details>
-  <summary>#### User Account Pages</summary>
+  <summary>User Account Pages</summary>
 
 - Register page
 
@@ -120,8 +123,10 @@ This is a recipe website that is open to everyone who loves cooking and wants to
 
 ### Future Features
 
-- 
-- 
+- Create new categories.
+- Create a profile page.
+- Save favourite recipes in user's profile.
+- List of created recipes in user's profile.
 
 [Back to top](#fill-your-belly-feed-your-soul)
 
