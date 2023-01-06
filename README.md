@@ -31,7 +31,9 @@ This is a recipe website that is open to everyone who loves cooking and wants to
   - [Design](#design)
     - [Flow Diagram](#flow-diagram)
   - [Testing](#testing)
-    - [Bugs Fixed](#bugs-fixed)
+    - [User Testing](#user-testing)
+    - [Manual Testing](#manual-testing)
+    - [Bugs to fix](#bugs-to-fix)
   - [Technologies Used](#technologies-used)
   - [Deployment](#deployment)
     - [Using Heroku](#using-heroku)
@@ -193,6 +195,10 @@ The Agile Methodology was used to plan and manage this project. Issues were crea
 
 ## Design
 
+The colour scheme for the design of the website is based in the banner image.
+
+![Flow diagram](static/testing/static/testing/recipe-banner.png)
+
 ### Flow Diagram
 
 ![Flow diagram](static/testing/Database_ER_diagram.jpeg)
@@ -202,15 +208,45 @@ The flow chart above, created with the website [Lucidchart](https://lucid.app/),
 ## Testing
 
 - The application was constantly tested during development.
-- To validate the code, the [PEP8 online validation tool](http://pep8online.com/) was used.
 - Lighthouse was used to test the app for Performance, Accessibility and Best Practices:
   
   ![Lighthouse Performance](assets/testing/lighthouse.png)
 
+### User Testing
 
-### Bugs Fixed
-During the creation of the while loops with the nested if statements, I had some problems and had to research and learn how to use it properly making each if, elif, else break or call the right function to continue with the next part of the story.
+- User Testing:
+  
+  - Expectations:
+  
+  The user expects the app to provide an appropriate landing page that welcomes them, engages them with relevant information, and provides clear navigation to help them make choices (read, add, edit, delete recipes and comments). They also expect easy-to-follow navigation that is clear and concise, so they can easily find the information they are looking for. If there is a problem, the user expects to be notified and given instructions on how to fix it.
 
+  - Result:
+
+  The app's landing page was appropriate and welcoming, and the home page let me know what the app was about and what its features were. The navigation was easy to follow and I could understand everything on each page. The information was clear and I could make choices about what I wanted to do (read, add, edit, delete recipes and comments). When I made a mistake, I was told what I needed to do and given directions on how to fix the problem.
+
+### Manual Testing
+
+<details>
+  <summary>Navigation Bar
+
+| **Navigation Bar** | Status
+|:-------:|:--------|
+| Click on navbar logo loads home page | &check;
+| Click on the Home tab loads the home page | &check;
+| Click on the Recipes tab loads the recipe page | &check;
+| Click on Login loads the login page | &check;
+| Click on Signup loads the signup page | &check;
+| Click on Logout loads the logout page | &check;
+| Click on Add Recipe loads the add recipe page | &check;
+
+| **Navigation Footer** | Status
+|:-------:|:--------|
+
+
+
+### Bugs to fix
+
+After sending a comment, if a user wants to send another comment it shows an error.
 
 [Back to top](#fill-your-belly-feed-your-soul)
 
