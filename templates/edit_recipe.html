@@ -7,18 +7,18 @@
 {% load cloudinary %}
 
 <div class="container">
-    <h1 class="text-primary text-center recipe-title">Edit Recipe</h1>    
+    <h1 class="text-center recipe-title">Edit Recipe</h1>    
     <br>
     <div class="row justify-content-center ">
         {% if user.is_authenticated %}
-        <div class="col-11 col-md-8 col-lg-6 mt-3">
+        <div class="col-11 col-md-8 col-lg-6 mt-3 add-form">
             <!--Add Recipe Form-->
-            <form method="post" class="mb-5 text-primary">
+            <form method="post" class="mb-5">
                 {{ form | crispy }}
                 {% csrf_token %}
                 <!--Submit recipe or cancel-->
-                <button type="submit" class="btn btn-primary">Update</button>
-                <a class="btn btn-primary m-2" href="{% url 'recipes' %}">Cancel</a>
+                <button type="submit" class="btn orange-btn">Update</button>
+                <a class="btn orange-btn m-2" href="{% url 'recipes' %}">Cancel</a>
             </form>
         </div>
         {% endif %}
