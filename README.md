@@ -197,7 +197,7 @@ The Agile Methodology was used to plan and manage this project. Issues were crea
 
 The colour scheme for the design of the website is based in the banner image.
 
-![Flow diagram](static/testing/static/testing/recipe-banner.png)
+![Image Colours](/static/testing/recipe-banner.png)
 
 ### Flow Diagram
 
@@ -241,7 +241,55 @@ The flow chart above, created with the website [Lucidchart](https://lucid.app/),
 
 | **Navigation Footer** | Status
 |:-------:|:--------|
+| Click on Facebook Icon opens external Tab | &check;
+| Click on Twitter opens external Tab | &check;
+| Click on Instagram opens external Tab | &check;
+| Click on Youtube opens external Tab | &check;
 
+| **Home Page** | Status
+|:-------:|:--------|
+| Sign up and Login visible when logged out | &check;
+| Logout and Add recipes visible when logged in | &check;
+| Username visible when logged in | &check;
+| The latest 8 recipes added are shown | &check;
+
+| **Recipes Page** | Status
+|:-------:|:--------|
+| All the recipes are visible | &check;
+| When a category is clicked it shows the recipes in it | &check;
+
+| **Categories Navigation** | Status
+|:-------:|:--------|
+| It shows all the  categories added | &check;
+| When a category is clicked it shows the recipes in it | &check;
+
+| **Recipe details Page** | Status
+|:-------:|:--------|
+| All the recipe details are visible | &check;
+| Click on edit recipe loads the edit recipe page | &check;
+| Click on delete recipe loads the delete recipe page | &check;
+| The comments are visible | &check;
+| The leave a comment section is visible | &check;
+| Click on submit comment sends the comment for review | &check;
+| Click on edit comment loads the edit comment page | &check;
+| Click on delete comment loads the delete comment page | &check;
+| Click on more recipes redirects to the recipe page | &check;
+
+| **Add Recipe Page** | Status
+|:-------:|:--------|
+| All the fields are visible | &check;
+| Type in fields lets you write | &check;
+| Ingredients and Method fields uses Summernote | &check;
+| Click on Select an Image file button uploads an image | &check;
+| If an Image file is not selected it shows a placeholder image | &check;
+| Click on Submit button sends the form for approval | &check;
+| Click on Cancel button cancels and redirects to the recipe page | &check;
+
+| **Likes and Comments** | Status
+|:-------:|:--------|
+| Click on Like/Unlike only works when logged in | &check;
+| Comments can be left only when logged in | &check;
+| The recipes show the number of comments | &check;
 
 
 ### Bugs to fix
