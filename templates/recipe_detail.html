@@ -15,7 +15,7 @@
     </div>
     <!-- Recipe description and details, prep & cooking time -->
     <div class="row">
-        <div class="col-6 py-3">
+        <div class="col-md-6 col-sm-12 py-3">
             <!-- Featured image -->
             {% if "placeholder" in recipe.featured_image.url %}
             <img src="{% static 'image/recipe-book.jpg' %}" class="d-block w-100" alt="Recipe book">
@@ -23,7 +23,7 @@
             <img src="{{ recipe.featured_image.url }}" class="d-block w-100" alt="{{ recipe.title }}">
             {% endif %}
         </div>
-        <div class="col-6">
+        <div class="col-md-6 col-sm-12">
             <!-- Recipe Details -->
             <div class="col intro pt-3 pb-5">{{ recipe.description | safe }}</div>
             <p><i class="fa-solid fa-utensils icons"></i> Serves: {{ recipe.serves }}</p>
@@ -33,11 +33,11 @@
     </div>
     <!-- Recipe ingredients and method -->
     <div class="row py-5">
-        <div class="col-5">
+        <div class="col-md-5 col-sm-12 py-5">
             <h4>Ingredients</h4>
             {{ recipe.ingredients | safe }}
         </div>
-        <div class="col-7 method">
+        <div class="col-md-7 col-sm-12 method">
             <h4 class="ps-3">Method</h4>
             {{ recipe.method | safe }}
         </div>
@@ -105,8 +105,8 @@
     </div>
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Comments:</h3>
             <div class="card-body">
+                <h3>Comments:</h3>
                 <!-- We want a for loop inside the tags to iterate through each comment in comments -->
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
@@ -121,10 +121,10 @@
                     <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
                     {% if comment.name == user.username %}
-                    <a href="{% url 'edit_comment' comment.id %}" class="btn btn-sm comment-btn orange-btn" role="button"
-                        aria-pressed="true">Edit</a>
-                    <a href="{% url 'delete_comment' comment.id %}" class="btn btn-sm comment-btn orange-btn" role="button"
-                        aria-pressed="true">Delete</a>
+                    <a href="{% url 'edit_comment' comment.id %}" class="btn btn-sm comment-btn orange-btn"
+                        role="button" aria-pressed="true">Edit</a>
+                    <a href="{% url 'delete_comment' comment.id %}" class="btn btn-sm comment-btn orange-btn"
+                        role="button" aria-pressed="true">Delete</a>
                     {% endif %}
                 </div>
 

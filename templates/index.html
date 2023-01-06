@@ -21,7 +21,7 @@
     <div class="row">
 
         {% for recipe in recipes %}
-        <div class="col-3">
+        <div class="col-lg-3 col-md-4 col-sm-6">
             <a class="recipe-link" href="{% url 'recipe_detail' recipe.slug %}">
                 <!-- Featured image -->
                 {% if "placeholder" in recipe.featured_image.url %}
