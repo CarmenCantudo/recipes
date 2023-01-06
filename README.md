@@ -8,7 +8,6 @@ This is a recipe website that is open to everyone who loves cooking and wants to
 
 
 
-<br>
 
 ## Table of Contents
 - [Fill your belly, feed your soul](#fill-your-belly-feed-your-soul)
@@ -21,9 +20,6 @@ This is a recipe website that is open to everyone who loves cooking and wants to
       - [Recipe Details Page](#recipe-details-page)
       - [Edit Recipe Page](#edit-recipe-page)
       - [Delete Recipe Page](#delete-recipe-page)
-      - [Edit Comment Page](#edit-comment-page)
-      - [Delete Comment Page](#delete-comment-page)
-      - [User Account Pages](#user-account-pages)
       - [Admin Control](#admin-control)
     - [Future Features](#future-features)
   - [UX](#ux)
@@ -50,23 +46,75 @@ This is a recipe website that is open to everyone who loves cooking and wants to
 ### Existing Features
 #### Home Page
 
+![Home page](static/testing/home.png)
+
 #### Recipes Page
+
+![Recipe page](static/testing/recipes.png)
 
 #### Add Recipes Page
 
+![Add Recipe](static/testing/add_recipe.png)
+
 #### Recipe Details Page
+
+![Recipe Detail](static/testing/recipe_detail.png)
 
 #### Edit Recipe Page
 
+![Edit Recipe](static/testing/edit_recipe.png)
+
 #### Delete Recipe Page
 
-#### Edit Comment Page
+![Delete Recipe](static/testing/delete_recipe.png)
 
-#### Delete Comment Page
 
-#### User Account Pages
+<details>
+  <summary>#### Comments section</summary>
+
+![Comment section](static/testing/comments.png)
+
+- Leave a comment
+
+![Leave a comment](static/testing/leave_comment.png)
+
+- Comment Approval
+
+![Comment approval](static/testing/comment_approval.png)
+
+- Edit Comment Page
+
+![Edit Comment](static/testing/edit_comment.png)
+
+- Delete Comment Page
+
+![Delete Comment](static/testing/delete_comment.png)
+
+</details>
+
+
+
+<details>
+  <summary>#### User Account Pages</summary>
+
+- Register page
+
+![Register page](static/testing/register.png)
+
+- Login page
+  
+![Login page](static/testing/login.png)
+
+- Logout page
+
+![Logout page](static/testing/logout.png)
+
+</details>
 
 #### Admin Control
+
+![Admin Control page](static/testing/admin.png)
+
 
 [Back to top](#fill-your-belly-feed-your-soul)
 
@@ -142,7 +190,7 @@ The Agile Methodology was used to plan and manage this project. Issues were crea
 
 ### Flow Diagram
 
-[Flow diagram](static/testing/Database_ER_diagram.jpeg)
+![Flow diagram](static/testing/Database_ER_diagram.jpeg)
 
 The flow chart above, created with the website [Lucidchart](https://lucid.app/), provides a simplified overview of what I was trying to accomplish.
 
