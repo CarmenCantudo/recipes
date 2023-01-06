@@ -1,4 +1,5 @@
-<!-- {% load static %} -->
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,18 +51,8 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'home' %}">Home</a>
           </li>
-          <!-- Category menu from How To Add Blog Category Navbar Links - Django Blog #15 https://youtu.be/2MkULPXXXLk -->
-          {% if cat_menu %}
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="{% url 'recipes' %}" id="navbarDropdown" role="button"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recipes</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              {% for item in cat_menu %}
-              <a class="dropdown-item dropdown-link cap-cat" href="{% url 'categories' item|slugify %}">{{ item }}</a>
-              {% endfor %}
-            </div>
-            {% endif %}
-
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'recipes' %}">Recipes</a>
           </li>
           <!-- Navbar links for authenticated users -->
           {% if user.is_authenticated %}

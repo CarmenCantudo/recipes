@@ -45,10 +45,9 @@ class RecipeCategory(generic.ListView):
     template_name = 'categories.html'
 
     def get(self, request, cats):
-        recipe_cats = Recipe.objects.filter(category=cats.replace('-', ' ')
-                                            .order_by('-id'))
+        recipe_cats = Recipe.objects.filter(category=cats.replace('-', ' '))
         context = {
-                'cats': cats.title().replace('-', ' '),
+                'cats': cats.title(),
                 'recipe_cats': recipe_cats
                 }
         return render(request, 'categories.html', context)
