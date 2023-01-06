@@ -23,6 +23,14 @@ body {
 }
 
 .cat-pill {
+    background-color: #85BCA7;
+    margin: 5px;
+    border: 2px outset #85BCA7;
+    border-radius: 8px;
+    color: #E49645;
+}
+
+.cat-pill:hover {
     background-color: #518173;
     color: #EFBB7F;
 }
