@@ -7,6 +7,13 @@
     <div class="container">
         <h1 class="text-center my-3 recipe-title">{{ cats }} Recipes</h1>
     </div>
+    <div class="row d-flex">
+        <nav class="nav nav-justified">
+            {% for item in cat_menu %}
+            <a class="nav-item nav-link cap-cat cat-pill" href="{% url 'category' item|slugify %}">{{ item }}</a>
+            {% endfor %}
+        </nav>
+    </div>
     <!-- Recipe Entries Column -->
     <div class="col-12 mt-3 left">
         <div class="row">

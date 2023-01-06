@@ -28,6 +28,7 @@ body {
     border: 2px outset #85BCA7;
     border-radius: 8px;
     color: #E49645;
+    flex-basis: auto;
 }
 
 .cat-pill:hover {

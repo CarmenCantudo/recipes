@@ -11,8 +11,8 @@
                 advice to help you do just that. Our goal is to make your kitchen wins, so we're here to help. Whether
                 you're a home cook or just looking for some advice, we've got you covered.</p>
         </div>
-        <div class="row">
-            <nav class="nav nav-pills nav-justified">
+        <div class="row d-flex">
+            <nav class="nav nav-justified">
                 {% for item in cat_menu %}
                 <a class="nav-item nav-link cap-cat cat-pill" href="{% url 'category' item|slugify %}">{{ item }}</a>
                 {% endfor %}
