@@ -37,8 +37,8 @@
         {% csrf_token %}
         <h5 class="text-danger text text-center">Are you sure you want to delete your recipe?</h5>
         <div class="text-center">
-            <button type="submit" class="btn btn-primary">Delete</button>
-            <a class="btn btn-primary" href="{% url 'recipes' %}">Cancel</a>
+            <button type="submit" class="btn orange-btn">Delete</button>
+            <a class="btn orange-btn" href="{% url 'recipes' %}">Cancel</a>
         </div>
     </form>
     {% else %}
